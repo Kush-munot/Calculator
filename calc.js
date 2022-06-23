@@ -1,3 +1,35 @@
+let switches = document.getElementsByClassName('switch');
+let style = localStorage.getItem('style');
+
+if (style == null) {
+  setTheme('light');
+} else {
+  setTheme(style);
+}
+
+for (let i of switches) {
+  i.addEventListener('click', function () {
+    let theme = this.dataset.theme;
+    setTheme(theme);
+  });
+}
+
+function setTheme(theme) {
+  if (theme == 'light') {
+    document.getElementById('switcher-id').href = './themes/light.css';
+  } else if (theme == 'blue') {
+    document.getElementById('switcher-id').href = './themes/blue.css';
+  } else if (theme == 'red') {
+    document.getElementById('switcher-id').href = './themes/red.css';
+  } else if (theme == 'dark') {
+    document.getElementById('switcher-id').href = './themes/dark.css';
+  }else if (theme == 'green') {
+    document.getElementById('switcher-id').href = './themes/green.css';
+  }
+  localStorage.setItem('style', theme);
+}
+
+
 document.getElementById('answer').readOnly = true; //set this attribute in Html file
 let screen = document.getElementById('answer');
 buttons = document.querySelectorAll('button');
