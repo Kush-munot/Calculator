@@ -34,11 +34,13 @@ function setTheme(theme) {
 document.getElementById('answer').readOnly = true; 
 let screen = document.getElementById('answer');
 buttons = document.querySelectorAll('button');
+console.log(buttons)
 let screenValue = '';
 for (item of buttons) {
     item.addEventListener('click', (e) => {
-        // console.log(buttonText, "has been pressed");
         buttonText = e.target.innerText;
+        console.log(buttonText)
+        console.log(screenValue)
         if (buttonText == 'X') {
             buttonText = '*';
             screenValue += buttonText;
@@ -70,7 +72,7 @@ document.addEventListener("keydown", function(event) {
     else if(event.shiftKey==53){
         event.key = '%';
     }
-    if(event.keyCode==88){
+    if(event.key==88){
         screenValue += '*';
         screen.value = screenValue;
     }
@@ -78,25 +80,25 @@ document.addEventListener("keydown", function(event) {
         screenValue += event.key;
         screen.value = screenValue;
     }
-    if(event.keyCode == 13 || event.keyCode == 187)
+    if(event.key == 13 || event.keyCode == 187)
     {
         screen.value = eval(screenValue);
     }
-    else if(event.keyCode == 46){
+    else if(event.key == 46){
         screenValue = "";
         screen.value = screenValue;
         console.clear();
     }
-    else if(event.keyCode == 8){
+    else if(event.key == 8){
         screenValue = screenValue.slice(0, -1);
         screen.value = screenValue;
     }
-    else if(event.keyCode == 67){
+    else if(event.key == 67){
         screenValue = "";
         screen.value = screenValue;
         console.clear();
     }
-    else if(event.keyCode == 82){
+    else if(event.key == 82){
         location.reload();
     }
   })
