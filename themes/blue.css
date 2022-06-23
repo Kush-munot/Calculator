@@ -1,8 +1,9 @@
 :root {
     --light: #ffffff;
-    --blue: ##2e85ff;
+    --blue: #2e85ff;
     --purple: #97266d;
     --dark: #81899b;
+    --green:#052603;
   }
 
 body,
@@ -158,4 +159,7 @@ a:hover{
   }
   #switch-4 {
     background-color: var(--dark);
+  }
+  #switch-5{
+    background-color: var(--green);
   }

@@ -11,13 +11,14 @@ for (let i of switches) {
   i.addEventListener('click', function () {
     let theme = this.dataset.theme;
     setTheme(theme);
+    console.log(theme);
   });
 }
 
 function setTheme(theme) {
   if (theme == 'light') {
     document.getElementById('switcher-id').href = './themes/light.css';
-  } else if (theme == 'blue') {
+  } else if (theme == 'sky') {
     document.getElementById('switcher-id').href = './themes/blue.css';
   } else if (theme == 'red') {
     document.getElementById('switcher-id').href = './themes/red.css';
@@ -30,7 +31,7 @@ function setTheme(theme) {
 }
 
 
-document.getElementById('answer').readOnly = true; //set this attribute in Html file
+document.getElementById('answer').readOnly = true; 
 let screen = document.getElementById('answer');
 buttons = document.querySelectorAll('button');
 let screenValue = '';
